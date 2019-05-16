@@ -12,6 +12,9 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) UIBarButtonItem* doneButton;
+@property (nonatomic, strong) UIBarButtonItem* cancelButton;
+
 @end
 
 @implementation ViewController
@@ -74,19 +77,24 @@
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    UIToolbar* toolbar = [[UIToolbar alloc] init];
-    toolbar.barStyle = UIBarStyleDefault;
-    [toolbar sizeToFit];
-    
+    UIToolbar* toolbarBreed = [[UIToolbar alloc] init];
+    toolbarBreed.barStyle = UIBarStyleDefault;
+    [toolbarBreed sizeToFit];
+    UIToolbar* toolbarSubBreed = [[UIToolbar alloc] init];
+    toolbarSubBreed.barStyle = UIBarStyleDefault;
+    [toolbarSubBreed sizeToFit];
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleDone target:self action:@selector(doneClicked:)];
-    UIBarButtonItem* cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" style:UIBarButtonItemStylePlain target:self action:@selector(cancelClicked:)];
-    [toolbar setItems:[NSArray arrayWithObjects:cancelButton, flexibleSpace, doneButton, nil]];
+    UIBarButtonItem* doneButtonBreed = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleDone target:self action:@selector(doneClickedBreed:)];
+    UIBarButtonItem* cancelButtonBreed = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" style:UIBarButtonItemStylePlain target:self action:@selector(cancelClickedBreed:)];
+    UIBarButtonItem* doneButtonSubBreed = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleDone target:self action:@selector(doneClickedSubBreed:)];
+    UIBarButtonItem* cancelButtonSubBreed = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" style:UIBarButtonItemStylePlain target:self action:@selector(cancelClickedSubBreed:)];
+    [toolbarBreed setItems:[NSArray arrayWithObjects:cancelButtonBreed, flexibleSpace, doneButtonBreed, nil]];
+    [toolbarSubBreed setItems:[NSArray arrayWithObjects:cancelButtonSubBreed, flexibleSpace, doneButtonSubBreed, nil]];
     
     self.breedTextField.inputView = self.breedPicker;
-    self.breedTextField.inputAccessoryView = toolbar;
+    self.breedTextField.inputAccessoryView = toolbarBreed;
     self.subBreedTextField.inputView = self.subBreedPicker;
-    self.subBreedTextField.inputAccessoryView = toolbar;
+    self.subBreedTextField.inputAccessoryView = toolbarSubBreed;
     
     [[NetworkService sharedInstance] getListAllBreeds:^(NSDictionary * _Nonnull breeds) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -137,12 +145,22 @@
     
 }
 
--(void)doneClicked:(id)sender {
-    NSLog(@"%@", sender);
+-(void)doneClickedBreed:(id)sender {
+    [self.breedTextField resignFirstResponder];
 }
 
--(void)cancelClicked:(id)sender {
-    NSLog(@"%@", sender);
+-(void)doneClickedSubBreed:(id)sender {
+    [self.subBreedTextField resignFirstResponder];
+}
+
+-(void)cancelClickedBreed:(id)sender {
+    [self.breedTextField resignFirstResponder];
+    self.breedTextField.text = @"";
+}
+
+-(void)cancelClickedSubBreed:(id)sender {
+    [self.subBreedTextField resignFirstResponder];
+    self.subBreedTextField.text = @"";
 }
 
 - (void)pressSearchButton {
