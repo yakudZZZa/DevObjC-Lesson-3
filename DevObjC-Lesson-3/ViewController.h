@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property (nonatomic, strong) UITextField *breedTextField;
+@property (nonatomic, strong) UITextField *subBreedTextField;
+@property (nonatomic, strong) NSDictionary *breeds;
+@property (nonatomic, strong) NSArray *breedsOnly;
+@property (nonatomic, strong) NSMutableArray *subBreedsOnly;
+@property (nonatomic, strong) UIPickerView *breedPicker;
+@property (nonatomic, strong) UIPickerView *subBreedPicker;
+@property (nonatomic, strong) UIButton *showDogs;
+@property (nonatomic, strong) NSArray *picturesList;
 
 @end
 

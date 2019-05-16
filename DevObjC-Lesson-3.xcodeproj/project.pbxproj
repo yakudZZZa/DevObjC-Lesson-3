@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		09780DF0228AC20D00B5329C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09780DEF228AC20D00B5329C /* AppDelegate.m */; };
 		09780DF3228AC20D00B5329C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09780DF2228AC20D00B5329C /* ViewController.m */; };
-		09780DF6228AC20D00B5329C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09780DF4228AC20D00B5329C /* Main.storyboard */; };
 		09780DF8228AC21000B5329C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09780DF7228AC21000B5329C /* Assets.xcassets */; };
 		09780DFB228AC21000B5329C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09780DF9228AC21000B5329C /* LaunchScreen.storyboard */; };
 		09780DFE228AC21000B5329C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09780DFD228AC21000B5329C /* main.m */; };
+		097A0303228C5E1A00DC0FE9 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 097A0302228C5E1A00DC0FE9 /* NetworkService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +21,12 @@
 		09780DEF228AC20D00B5329C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		09780DF1228AC20D00B5329C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		09780DF2228AC20D00B5329C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		09780DF5228AC20D00B5329C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09780DF7228AC21000B5329C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09780DFA228AC21000B5329C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09780DFC228AC21000B5329C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09780DFD228AC21000B5329C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		097A0301228C5E1A00DC0FE9 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		097A0302228C5E1A00DC0FE9 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 			children = (
 				09780DED228AC20D00B5329C /* DevObjC-Lesson-3 */,
 				09780DEC228AC20D00B5329C /* Products */,
+				D180EB28173742D1C946AA36 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,17 +60,33 @@
 		09780DED228AC20D00B5329C /* DevObjC-Lesson-3 */ = {
 			isa = PBXGroup;
 			children = (
+				097A0304228C5E2900DC0FE9 /* Networking */,
 				09780DEE228AC20D00B5329C /* AppDelegate.h */,
 				09780DEF228AC20D00B5329C /* AppDelegate.m */,
 				09780DF1228AC20D00B5329C /* ViewController.h */,
 				09780DF2228AC20D00B5329C /* ViewController.m */,
-				09780DF4228AC20D00B5329C /* Main.storyboard */,
 				09780DF7228AC21000B5329C /* Assets.xcassets */,
 				09780DF9228AC21000B5329C /* LaunchScreen.storyboard */,
 				09780DFC228AC21000B5329C /* Info.plist */,
 				09780DFD228AC21000B5329C /* main.m */,
 			);
 			path = "DevObjC-Lesson-3";
+			sourceTree = "<group>";
+		};
+		097A0304228C5E2900DC0FE9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				097A0301228C5E1A00DC0FE9 /* NetworkService.h */,
+				097A0302228C5E1A00DC0FE9 /* NetworkService.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D180EB28173742D1C946AA36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,7 +124,7 @@
 				};
 			};
 			buildConfigurationList = 09780DE6228AC20D00B5329C /* Build configuration list for PBXProject "DevObjC-Lesson-3" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -130,7 +148,6 @@
 			files = (
 				09780DFB228AC21000B5329C /* LaunchScreen.storyboard in Resources */,
 				09780DF8228AC21000B5329C /* Assets.xcassets in Resources */,
-				09780DF6228AC20D00B5329C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,20 +161,13 @@
 				09780DF3228AC20D00B5329C /* ViewController.m in Sources */,
 				09780DFE228AC21000B5329C /* main.m in Sources */,
 				09780DF0228AC20D00B5329C /* AppDelegate.m in Sources */,
+				097A0303228C5E1A00DC0FE9 /* NetworkService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		09780DF4228AC20D00B5329C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09780DF5228AC20D00B5329C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		09780DF9228AC21000B5329C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +304,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "yakudZZZa.DevObjC-Lesson-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -311,7 +321,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "yakudZZZa.DevObjC-Lesson-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
