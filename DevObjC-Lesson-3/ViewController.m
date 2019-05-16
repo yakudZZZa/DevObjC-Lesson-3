@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "NetworkService.h"
-
+#import "DogsViewController.h"
 
 @interface ViewController ()
 
@@ -18,22 +18,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    self.breedTextField = [[UITextField alloc] initWithFrame:CGRectMake(10,
-                                                                       100,
-                                                                       self.view.bounds.size.width / 2 - 15,
-                                                                       30)];
+    self.navigationItem.title = @"Найди пёселя 🐶";
+    
+    self.dogPic = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2 - 165 / 2, 74, 165, 170)];
+    [self.dogPic setContentMode:UIViewContentModeScaleAspectFill];
+    self.dogPic.image = [UIImage imageNamed:@"dog"];
+    [self.view addSubview:self.dogPic];
+    
+    self.breedTextField = [[UITextField alloc]
+                           initWithFrame:CGRectMake(10,
+                                                    self.dogPic.bounds.size.height + 64 + 20,
+                                                    self.view.bounds.size.width / 2 - 15,
+                                                    30)];
     [self.breedTextField setPlaceholder:@"Выбери пёселя"];
     [self.breedTextField setTextAlignment:NSTextAlignmentCenter];
     self.breedTextField.layer.borderWidth = 1;
     self.breedTextField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     [self.view addSubview:self.breedTextField];
     
-    self.subBreedTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.view.bounds.size.width /2 + 5,
-                                                                           100,
-                                                                           self.view.bounds.size.width / 2 - 15,
-                                                                           30)];
+    self.subBreedTextField = [[UITextField alloc]
+                              initWithFrame:CGRectMake(self.view.bounds.size.width /2 + 5,
+                                                       self.dogPic.bounds.size.height + 64 + 20,
+                                                       self.view.bounds.size.width / 2 - 15,
+                                                       30)];
     self.subBreedTextField.layer.borderWidth = 1;
     self.subBreedTextField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     [self.subBreedTextField setPlaceholder:@"Подвид пёселя"];
@@ -138,9 +146,17 @@
 }
 
 - (void)pressSearchButton {
+    if ([self.breedTextField.text isEqual:@""]) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Так не найти пёселя" message:@"Нужно выбрать пёселя, чтобы найти его" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {}];
+        [alertController addAction:action];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
     [[NetworkService sharedInstance] getPicturesByBreed:self.breedTextField.text subBreed:self.subBreedTextField.text numberOfPictures:3 withCompletion:^(NSArray * _Nonnull resultBreeds) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.picturesList = resultBreeds;
+            DogsViewController *vc = [[DogsViewController alloc] initWithRateModel:resultBreeds];
+            [self.navigationController pushViewController:vc animated:true];
         });
     }];
 }

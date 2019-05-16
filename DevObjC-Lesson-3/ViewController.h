@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIPickerView *subBreedPicker;
 @property (nonatomic, strong) UIButton *showDogs;
 @property (nonatomic, strong) NSArray *picturesList;
+@property (nonatomic, strong) UIImageView *dogPic;
 
 @end
 

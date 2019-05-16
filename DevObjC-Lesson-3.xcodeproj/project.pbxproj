@@ -13,6 +13,8 @@
 		09780DFB228AC21000B5329C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09780DF9228AC21000B5329C /* LaunchScreen.storyboard */; };
 		09780DFE228AC21000B5329C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09780DFD228AC21000B5329C /* main.m */; };
 		097A0303228C5E1A00DC0FE9 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 097A0302228C5E1A00DC0FE9 /* NetworkService.m */; };
+		09DF5CB3228D7CBD000D01F0 /* DogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DF5CB2228D7CBD000D01F0 /* DogsViewController.m */; };
+		09DF5CB6228D83A6000D01F0 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DF5CB5228D83A6000D01F0 /* MyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,10 @@
 		09780DFD228AC21000B5329C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		097A0301228C5E1A00DC0FE9 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
 		097A0302228C5E1A00DC0FE9 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		09DF5CB1228D7CBD000D01F0 /* DogsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogsViewController.h; sourceTree = "<group>"; };
+		09DF5CB2228D7CBD000D01F0 /* DogsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogsViewController.m; sourceTree = "<group>"; };
+		09DF5CB4228D83A6000D01F0 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		09DF5CB5228D83A6000D01F0 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,10 @@
 				097A0304228C5E2900DC0FE9 /* Networking */,
 				09780DEE228AC20D00B5329C /* AppDelegate.h */,
 				09780DEF228AC20D00B5329C /* AppDelegate.m */,
+				09DF5CB1228D7CBD000D01F0 /* DogsViewController.h */,
+				09DF5CB2228D7CBD000D01F0 /* DogsViewController.m */,
+				09DF5CB4228D83A6000D01F0 /* MyTableViewCell.h */,
+				09DF5CB5228D83A6000D01F0 /* MyTableViewCell.m */,
 				09780DF1228AC20D00B5329C /* ViewController.h */,
 				09780DF2228AC20D00B5329C /* ViewController.m */,
 				09780DF7228AC21000B5329C /* Assets.xcassets */,
@@ -161,7 +171,9 @@
 				09780DF3228AC20D00B5329C /* ViewController.m in Sources */,
 				09780DFE228AC21000B5329C /* main.m in Sources */,
 				09780DF0228AC20D00B5329C /* AppDelegate.m in Sources */,
+				09DF5CB6228D83A6000D01F0 /* MyTableViewCell.m in Sources */,
 				097A0303228C5E1A00DC0FE9 /* NetworkService.m in Sources */,
+				09DF5CB3228D7CBD000D01F0 /* DogsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

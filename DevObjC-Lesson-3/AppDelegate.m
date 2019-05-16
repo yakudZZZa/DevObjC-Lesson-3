@@ -22,7 +22,7 @@
     
     ViewController *vc = [[ViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [nav setNavigationBarHidden:YES];
+    [nav setNavigationBarHidden:NO];
     [self.window setRootViewController:nav];
     [self.window makeKeyAndVisible];
     
