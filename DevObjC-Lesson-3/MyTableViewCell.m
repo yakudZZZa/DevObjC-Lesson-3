@@ -22,7 +22,7 @@
     if (self) {
         
         self.image = [[UIImageView alloc] initWithFrame:self.bounds];
-        [self.image setContentMode:UIViewContentModeScaleAspectFill];
+        [self.image setContentMode:UIViewContentModeScaleAspectFit];
         [self.contentView addSubview:self.image];
         
     }
