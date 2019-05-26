@@ -179,4 +179,13 @@
     }];
 }
 
+- (void)viewWillLayoutSubviews {
+    NSLog(@"bounds.origin.y = %f, bounds.size.height = %f, frame.origin.y = %f, frame.size.height = %f", self.navigationController.navigationBar.bounds.origin.y, self.navigationController.navigationBar.bounds.size.height, self.navigationController.navigationBar.frame.origin.y, self.navigationController.navigationBar.frame.size.height);
+    self.dogPic.frame = CGRectMake(self.view.bounds.size.width / 2 - 165 / 2, self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height, 165, 170);
+    
+    self.breedTextField.frame = CGRectMake(10, self.dogPic.frame.size.height + self.dogPic.frame.origin.y + 20, self.view.bounds.size.width / 2 - 15, 30);
+    
+    self.subBreedTextField.frame = CGRectMake(self.view.bounds.size.width /2 + 5, self.dogPic.frame.size.height + self.dogPic.frame.origin.y + 20, self.view.bounds.size.width / 2 - 15, 30);
+}
+
 @end

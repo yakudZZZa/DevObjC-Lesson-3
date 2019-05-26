@@ -15,6 +15,8 @@
 		097A0303228C5E1A00DC0FE9 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 097A0302228C5E1A00DC0FE9 /* NetworkService.m */; };
 		09DF5CB3228D7CBD000D01F0 /* DogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DF5CB2228D7CBD000D01F0 /* DogsViewController.m */; };
 		09DF5CB6228D83A6000D01F0 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DF5CB5228D83A6000D01F0 /* MyTableViewCell.m */; };
+		09E051912296EF6100902CCF /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E051902296EF6100902CCF /* TabBarViewController.m */; };
+		09E051942296EFFE00902CCF /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E051932296EFFE00902CCF /* CollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		09DF5CB2228D7CBD000D01F0 /* DogsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogsViewController.m; sourceTree = "<group>"; };
 		09DF5CB4228D83A6000D01F0 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
 		09DF5CB5228D83A6000D01F0 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		09E0518F2296EF6100902CCF /* TabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		09E051902296EF6100902CCF /* TabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		09E051922296EFFE00902CCF /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		09E051932296EFFE00902CCF /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +75,14 @@
 				097A0304228C5E2900DC0FE9 /* Networking */,
 				09780DEE228AC20D00B5329C /* AppDelegate.h */,
 				09780DEF228AC20D00B5329C /* AppDelegate.m */,
+				09E051922296EFFE00902CCF /* CollectionViewController.h */,
+				09E051932296EFFE00902CCF /* CollectionViewController.m */,
 				09DF5CB1228D7CBD000D01F0 /* DogsViewController.h */,
 				09DF5CB2228D7CBD000D01F0 /* DogsViewController.m */,
 				09DF5CB4228D83A6000D01F0 /* MyTableViewCell.h */,
 				09DF5CB5228D83A6000D01F0 /* MyTableViewCell.m */,
+				09E0518F2296EF6100902CCF /* TabBarViewController.h */,
+				09E051902296EF6100902CCF /* TabBarViewController.m */,
 				09780DF1228AC20D00B5329C /* ViewController.h */,
 				09780DF2228AC20D00B5329C /* ViewController.m */,
 				09780DF7228AC21000B5329C /* Assets.xcassets */,
@@ -168,8 +178,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E051942296EFFE00902CCF /* CollectionViewController.m in Sources */,
 				09780DF3228AC20D00B5329C /* ViewController.m in Sources */,
 				09780DFE228AC21000B5329C /* main.m in Sources */,
+				09E051912296EF6100902CCF /* TabBarViewController.m in Sources */,
 				09780DF0228AC20D00B5329C /* AppDelegate.m in Sources */,
 				09DF5CB6228D83A6000D01F0 /* MyTableViewCell.m in Sources */,
 				097A0303228C5E1A00DC0FE9 /* NetworkService.m in Sources */,
