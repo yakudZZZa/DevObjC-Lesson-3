@@ -178,7 +178,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             DogsViewController *vc = [[DogsViewController alloc] initWithRateModel:resultBreeds];
             [self.navigationController pushViewController:vc animated:true];
-            [[CoreDataService sharedInstance]addDogWithBreed:self.breedTextField.text withSubbreed:self.subBreedTextField.text withImages:resultBreeds];
+            [[CoreDataService sharedInstance]addDogWithBreed:self.breedTextField.text withSubbreed:self.subBreedTextField.text];
         });
     }];
 }

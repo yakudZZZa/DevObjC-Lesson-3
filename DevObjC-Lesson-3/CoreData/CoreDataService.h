@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CoreDataService : NSObject
 
 +(instancetype)sharedInstance;
-- (void)addDogWithBreed:(NSString *)breed withSubbreed:(NSString *)subBreed withImages:(NSArray *)images;
+- (void)addDogWithBreed:(NSString *)breed withSubbreed:(NSString *)subBreed;
 - (NSArray*)dogs;
 - (void)removeDog:(Dog *)dog;
 

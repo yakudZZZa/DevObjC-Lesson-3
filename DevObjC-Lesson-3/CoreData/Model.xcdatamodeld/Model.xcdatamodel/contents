@@ -2,10 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Dog" representedClassName="Dog" syncable="YES">
         <attribute name="breed" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="images" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="subBreed" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Dog" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Dog" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

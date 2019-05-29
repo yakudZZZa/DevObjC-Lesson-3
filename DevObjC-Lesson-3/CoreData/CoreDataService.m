@@ -47,11 +47,10 @@
     }
 }
 
-- (void)addDogWithBreed:(NSString *)breed withSubbreed:(NSString *)subBreed withImages:(NSArray *)images {
+- (void)addDogWithBreed:(NSString *)breed withSubbreed:(NSString *)subBreed {
     Dog *tempDog = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.context];
     tempDog.breed = breed;
     tempDog.subBreed = subBreed;
-    tempDog.images = images;
     [self save];
 }
 

@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		093525AC229AF63C00654518 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 093525AA229AF63C00654518 /* Model.xcdatamodeld */; };
 		093525B5229AF8D300654518 /* CoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 093525B4229AF8D300654518 /* CoreDataService.m */; };
-		093525C0229E8BF900654518 /* Dog+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 093525BE229E8BF900654518 /* Dog+CoreDataClass.m */; };
-		093525C1229E8BF900654518 /* Dog+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 093525BF229E8BF900654518 /* Dog+CoreDataProperties.m */; };
 		093525C4229E9DB500654518 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093525C3229E9DB500654518 /* TableViewController.m */; };
+		095EF256229EC1380097E9D7 /* Dog+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 095EF254229EC1380097E9D7 /* Dog+CoreDataClass.m */; };
+		095EF257229EC1380097E9D7 /* Dog+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 095EF255229EC1380097E9D7 /* Dog+CoreDataProperties.m */; };
 		09780DF0228AC20D00B5329C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09780DEF228AC20D00B5329C /* AppDelegate.m */; };
 		09780DF3228AC20D00B5329C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09780DF2228AC20D00B5329C /* ViewController.m */; };
 		09780DF8228AC21000B5329C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09780DF7228AC21000B5329C /* Assets.xcassets */; };
@@ -28,12 +28,12 @@
 		093525AB229AF63C00654518 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		093525B3229AF8D300654518 /* CoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataService.h; sourceTree = "<group>"; };
 		093525B4229AF8D300654518 /* CoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataService.m; sourceTree = "<group>"; };
-		093525BC229E8BF900654518 /* Dog+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dog+CoreDataProperties.h"; sourceTree = "<group>"; };
-		093525BD229E8BF900654518 /* Dog+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dog+CoreDataClass.h"; sourceTree = "<group>"; };
-		093525BE229E8BF900654518 /* Dog+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataClass.m"; sourceTree = "<group>"; };
-		093525BF229E8BF900654518 /* Dog+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataProperties.m"; sourceTree = "<group>"; };
 		093525C2229E9DB500654518 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		093525C3229E9DB500654518 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		095EF252229EC1380097E9D7 /* Dog+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dog+CoreDataProperties.h"; sourceTree = "<group>"; };
+		095EF253229EC1380097E9D7 /* Dog+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dog+CoreDataClass.h"; sourceTree = "<group>"; };
+		095EF254229EC1380097E9D7 /* Dog+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataClass.m"; sourceTree = "<group>"; };
+		095EF255229EC1380097E9D7 /* Dog+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataProperties.m"; sourceTree = "<group>"; };
 		09780DEB228AC20D00B5329C /* DevObjC-Lesson-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevObjC-Lesson-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09780DEE228AC20D00B5329C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09780DEF228AC20D00B5329C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,10 +80,10 @@
 		093525A9229AF62000654518 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				093525BC229E8BF900654518 /* Dog+CoreDataProperties.h */,
-				093525BD229E8BF900654518 /* Dog+CoreDataClass.h */,
-				093525BE229E8BF900654518 /* Dog+CoreDataClass.m */,
-				093525BF229E8BF900654518 /* Dog+CoreDataProperties.m */,
+				095EF252229EC1380097E9D7 /* Dog+CoreDataProperties.h */,
+				095EF253229EC1380097E9D7 /* Dog+CoreDataClass.h */,
+				095EF254229EC1380097E9D7 /* Dog+CoreDataClass.m */,
+				095EF255229EC1380097E9D7 /* Dog+CoreDataProperties.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,16 +217,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095EF256229EC1380097E9D7 /* Dog+CoreDataClass.m in Sources */,
 				09E051942296EFFE00902CCF /* CollectionViewController.m in Sources */,
+				095EF257229EC1380097E9D7 /* Dog+CoreDataProperties.m in Sources */,
 				09780DF3228AC20D00B5329C /* ViewController.m in Sources */,
 				09780DFE228AC21000B5329C /* main.m in Sources */,
 				093525B5229AF8D300654518 /* CoreDataService.m in Sources */,
 				09E051912296EF6100902CCF /* TabBarViewController.m in Sources */,
 				09780DF0228AC20D00B5329C /* AppDelegate.m in Sources */,
-				093525C0229E8BF900654518 /* Dog+CoreDataClass.m in Sources */,
 				093525C4229E9DB500654518 /* TableViewController.m in Sources */,
 				093525AC229AF63C00654518 /* Model.xcdatamodeld in Sources */,
-				093525C1229E8BF900654518 /* Dog+CoreDataProperties.m in Sources */,
 				09DF5CB6228D83A6000D01F0 /* MyTableViewCell.m in Sources */,
 				097A0303228C5E1A00DC0FE9 /* NetworkService.m in Sources */,
 				09DF5CB3228D7CBD000D01F0 /* DogsViewController.m in Sources */,

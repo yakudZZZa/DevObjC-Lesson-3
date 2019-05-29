@@ -17,6 +17,5 @@
 
 @dynamic breed;
 @dynamic subBreed;
-@dynamic images;
 
 @end
