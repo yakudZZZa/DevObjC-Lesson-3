@@ -46,7 +46,7 @@
     if (!cell) {
         cell = [[MyTableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"Cell"];
     }
-    NSLog(@"%@", [self.pictureList objectAtIndex:indexPath.row]);
+//    NSLog(@"%@", [self.pictureList objectAtIndex:indexPath.row]);
     [cell configWithImages:[self.pictureList objectAtIndex:indexPath.row]];
     
     return cell;
