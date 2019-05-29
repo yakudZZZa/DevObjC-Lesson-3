@@ -7,10 +7,12 @@
 //
 
 #import "CollectionViewController.h"
+#import "CoreData/CoreDataService.h"
 
 @interface CollectionViewController () <UICollectionViewDataSource>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) NSArray *dogs;
 
 @end
 
@@ -39,6 +41,12 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.dogs = [[CoreDataService sharedInstance] dogs];
+    NSLog(@"Количество собак в базе - %lu", (unsigned long)[[[CoreDataService sharedInstance] dogs] count]);
+    
+}
+
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 100;
 }
@@ -47,6 +55,7 @@
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor purpleColor];
+    
     return cell;
     
 }

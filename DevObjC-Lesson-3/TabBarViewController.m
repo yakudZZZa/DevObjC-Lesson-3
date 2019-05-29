@@ -9,11 +9,13 @@
 #import "TabBarViewController.h"
 #import "ViewController.h"
 #import "CollectionViewController.h"
+#import "TableViewController.h"
 
 @interface TabBarViewController ()
 
 @property (strong, nonatomic) ViewController *firstVC;
 @property (strong, nonatomic) CollectionViewController *secondVC;
+@property (strong, nonatomic) TableViewController *thridVC;
 
 @end
 
@@ -31,7 +33,10 @@
         self.secondVC = [CollectionViewController new];
         self.secondVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:1];
         
-        self.viewControllers = @[firstNav, self.secondVC];
+        self.thridVC = [TableViewController new];
+        self.thridVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:2];
+        
+        self.viewControllers = @[firstNav, self.secondVC, self.thridVC];
         self.selectedIndex = 0;
         
         

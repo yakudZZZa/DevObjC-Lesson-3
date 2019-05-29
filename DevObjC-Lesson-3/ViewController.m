@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "NetworkService.h"
 #import "DogsViewController.h"
+#import "CoreData/CoreDataService.h"
 
 @interface ViewController ()
 
@@ -103,6 +104,8 @@
         });
     }];
     
+    
+    
 }
 
 
@@ -175,13 +178,13 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             DogsViewController *vc = [[DogsViewController alloc] initWithRateModel:resultBreeds];
             [self.navigationController pushViewController:vc animated:true];
+            [[CoreDataService sharedInstance]addDogWithBreed:self.breedTextField.text withSubbreed:self.subBreedTextField.text withImages:resultBreeds];
         });
     }];
 }
 
 - (void)viewWillLayoutSubviews {
-    NSLog(@"bounds.origin.y = %f, bounds.size.height = %f, frame.origin.y = %f, frame.size.height = %f", self.navigationController.navigationBar.bounds.origin.y, self.navigationController.navigationBar.bounds.size.height, self.navigationController.navigationBar.frame.origin.y, self.navigationController.navigationBar.frame.size.height);
-    self.dogPic.frame = CGRectMake(self.view.bounds.size.width / 2 - 165 / 2, self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height, 165, 170);
+    self.dogPic.frame = CGRectMake(self.view.bounds.size.width / 2 - 165 / 2, self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height + 20, 165, 170);
     
     self.breedTextField.frame = CGRectMake(10, self.dogPic.frame.size.height + self.dogPic.frame.origin.y + 20, self.view.bounds.size.width / 2 - 15, 30);
     

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093525AC229AF63C00654518 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 093525AA229AF63C00654518 /* Model.xcdatamodeld */; };
+		093525B5229AF8D300654518 /* CoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 093525B4229AF8D300654518 /* CoreDataService.m */; };
+		093525C0229E8BF900654518 /* Dog+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 093525BE229E8BF900654518 /* Dog+CoreDataClass.m */; };
+		093525C1229E8BF900654518 /* Dog+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 093525BF229E8BF900654518 /* Dog+CoreDataProperties.m */; };
+		093525C4229E9DB500654518 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093525C3229E9DB500654518 /* TableViewController.m */; };
 		09780DF0228AC20D00B5329C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09780DEF228AC20D00B5329C /* AppDelegate.m */; };
 		09780DF3228AC20D00B5329C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09780DF2228AC20D00B5329C /* ViewController.m */; };
 		09780DF8228AC21000B5329C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09780DF7228AC21000B5329C /* Assets.xcassets */; };
@@ -20,6 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		093525AB229AF63C00654518 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		093525B3229AF8D300654518 /* CoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataService.h; sourceTree = "<group>"; };
+		093525B4229AF8D300654518 /* CoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataService.m; sourceTree = "<group>"; };
+		093525BC229E8BF900654518 /* Dog+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dog+CoreDataProperties.h"; sourceTree = "<group>"; };
+		093525BD229E8BF900654518 /* Dog+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dog+CoreDataClass.h"; sourceTree = "<group>"; };
+		093525BE229E8BF900654518 /* Dog+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataClass.m"; sourceTree = "<group>"; };
+		093525BF229E8BF900654518 /* Dog+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataProperties.m"; sourceTree = "<group>"; };
+		093525C2229E9DB500654518 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		093525C3229E9DB500654518 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		09780DEB228AC20D00B5329C /* DevObjC-Lesson-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevObjC-Lesson-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09780DEE228AC20D00B5329C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09780DEF228AC20D00B5329C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,6 +66,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		093525A8229AF60D00654518 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				093525A9229AF62000654518 /* Models */,
+				093525AA229AF63C00654518 /* Model.xcdatamodeld */,
+				093525B3229AF8D300654518 /* CoreDataService.h */,
+				093525B4229AF8D300654518 /* CoreDataService.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		093525A9229AF62000654518 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				093525BC229E8BF900654518 /* Dog+CoreDataProperties.h */,
+				093525BD229E8BF900654518 /* Dog+CoreDataClass.h */,
+				093525BE229E8BF900654518 /* Dog+CoreDataClass.m */,
+				093525BF229E8BF900654518 /* Dog+CoreDataProperties.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		09780DE2228AC20D00B5329C = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +108,7 @@
 		09780DED228AC20D00B5329C /* DevObjC-Lesson-3 */ = {
 			isa = PBXGroup;
 			children = (
+				093525A8229AF60D00654518 /* CoreData */,
 				097A0304228C5E2900DC0FE9 /* Networking */,
 				09780DEE228AC20D00B5329C /* AppDelegate.h */,
 				09780DEF228AC20D00B5329C /* AppDelegate.m */,
@@ -83,6 +120,8 @@
 				09DF5CB5228D83A6000D01F0 /* MyTableViewCell.m */,
 				09E0518F2296EF6100902CCF /* TabBarViewController.h */,
 				09E051902296EF6100902CCF /* TabBarViewController.m */,
+				093525C2229E9DB500654518 /* TableViewController.h */,
+				093525C3229E9DB500654518 /* TableViewController.m */,
 				09780DF1228AC20D00B5329C /* ViewController.h */,
 				09780DF2228AC20D00B5329C /* ViewController.m */,
 				09780DF7228AC21000B5329C /* Assets.xcassets */,
@@ -181,8 +220,13 @@
 				09E051942296EFFE00902CCF /* CollectionViewController.m in Sources */,
 				09780DF3228AC20D00B5329C /* ViewController.m in Sources */,
 				09780DFE228AC21000B5329C /* main.m in Sources */,
+				093525B5229AF8D300654518 /* CoreDataService.m in Sources */,
 				09E051912296EF6100902CCF /* TabBarViewController.m in Sources */,
 				09780DF0228AC20D00B5329C /* AppDelegate.m in Sources */,
+				093525C0229E8BF900654518 /* Dog+CoreDataClass.m in Sources */,
+				093525C4229E9DB500654518 /* TableViewController.m in Sources */,
+				093525AC229AF63C00654518 /* Model.xcdatamodeld in Sources */,
+				093525C1229E8BF900654518 /* Dog+CoreDataProperties.m in Sources */,
 				09DF5CB6228D83A6000D01F0 /* MyTableViewCell.m in Sources */,
 				097A0303228C5E1A00DC0FE9 /* NetworkService.m in Sources */,
 				09DF5CB3228D7CBD000D01F0 /* DogsViewController.m in Sources */,
@@ -371,6 +415,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		093525AA229AF63C00654518 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				093525AB229AF63C00654518 /* Model.xcdatamodel */,
+			);
+			currentVersion = 093525AB229AF63C00654518 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 09780DE3228AC20D00B5329C /* Project object */;
 }

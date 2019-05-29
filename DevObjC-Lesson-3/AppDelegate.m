@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "TabBarViewController.h"
+#import "CoreDataService.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,8 @@
 //    [nav setNavigationBarHidden:NO];
     [self.window setRootViewController:vc];
     [self.window makeKeyAndVisible];
+    
+    [CoreDataService sharedInstance];
     
     return YES;
 }
