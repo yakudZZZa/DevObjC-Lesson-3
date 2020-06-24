@@ -60,8 +60,4 @@
     
 }
 
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//    
-//}
-
 @end

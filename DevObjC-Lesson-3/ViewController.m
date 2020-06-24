@@ -11,10 +11,13 @@
 #import "DogsViewController.h"
 #import "CoreData/CoreDataService.h"
 
+BOOL animating;
+
 @interface ViewController ()
 
 @property (nonatomic, strong) UIBarButtonItem* doneButton;
 @property (nonatomic, strong) UIBarButtonItem* cancelButton;
+
 
 @end
 
@@ -23,11 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Найди пёселя 🐶";
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ 🐶", NSLocalizedString(@"find dog", @"find dog")] ;
     
     self.dogPic = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2 - 165 / 2, 74, 165, 170)];
     [self.dogPic setContentMode:UIViewContentModeScaleAspectFill];
     self.dogPic.image = [UIImage imageNamed:@"dog"];
+    self.dogPic.frame = CGRectMake(self.view.bounds.size.width / 2 - 165 / 2, self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height + 20, 165, 170);
     [self.view addSubview:self.dogPic];
     
     self.breedTextField = [[UITextField alloc]
@@ -35,10 +39,11 @@
                                                     self.dogPic.bounds.size.height + 64 + 20,
                                                     self.view.bounds.size.width / 2 - 15,
                                                     30)];
-    [self.breedTextField setPlaceholder:@"Выбери пёселя"];
+    [self.breedTextField setPlaceholder:NSLocalizedString(@"choose breed", @"choose")];
     [self.breedTextField setTextAlignment:NSTextAlignmentCenter];
     self.breedTextField.layer.borderWidth = 1;
     self.breedTextField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.breedTextField.frame = CGRectMake(10, self.dogPic.frame.size.height + self.dogPic.frame.origin.y + 20, self.view.bounds.size.width / 2 - 15, 30);
     [self.view addSubview:self.breedTextField];
     
     self.subBreedTextField = [[UITextField alloc]
@@ -48,15 +53,16 @@
                                                        30)];
     self.subBreedTextField.layer.borderWidth = 1;
     self.subBreedTextField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    [self.subBreedTextField setPlaceholder:@"Подвид пёселя"];
+    [self.subBreedTextField setPlaceholder:NSLocalizedString(@"choose subbreed", @"choose subbreed")];
     [self.subBreedTextField setTextAlignment:NSTextAlignmentCenter];
+    self.subBreedTextField.frame = CGRectMake(self.view.bounds.size.width /2 + 5, self.dogPic.frame.size.height + self.dogPic.frame.origin.y + 20, self.view.bounds.size.width / 2 - 15, 30);
     [self.view addSubview:self.subBreedTextField];
     
     self.showDogs = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2 - 170 / 2,
                                                           self.view.bounds.size.height / 2 - 30 / 2,
                                                           170,
                                                           30)];
-    [self.showDogs setTitle:@"Найти пёселей" forState:UIControlStateNormal];
+    [self.showDogs setTitle:NSLocalizedString(@"find dogs", @"find dogs") forState:UIControlStateNormal];
     self.showDogs.layer.cornerRadius = self.showDogs.frame.size.height / 2;
     [self.showDogs setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.showDogs.layer.borderWidth = 1;
@@ -85,10 +91,10 @@
     toolbarSubBreed.barStyle = UIBarStyleDefault;
     [toolbarSubBreed sizeToFit];
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem* doneButtonBreed = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleDone target:self action:@selector(doneClickedBreed:)];
-    UIBarButtonItem* cancelButtonBreed = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" style:UIBarButtonItemStylePlain target:self action:@selector(cancelClickedBreed:)];
-    UIBarButtonItem* doneButtonSubBreed = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleDone target:self action:@selector(doneClickedSubBreed:)];
-    UIBarButtonItem* cancelButtonSubBreed = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" style:UIBarButtonItemStylePlain target:self action:@selector(cancelClickedSubBreed:)];
+    UIBarButtonItem* doneButtonBreed = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"done", @"done") style:UIBarButtonItemStyleDone target:self action:@selector(doneClickedBreed:)];
+    UIBarButtonItem* cancelButtonBreed = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"cancel", @"cancel") style:UIBarButtonItemStylePlain target:self action:@selector(cancelClickedBreed:)];
+    UIBarButtonItem* doneButtonSubBreed = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"done", @"done") style:UIBarButtonItemStyleDone target:self action:@selector(doneClickedSubBreed:)];
+    UIBarButtonItem* cancelButtonSubBreed = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"cancel", @"cancel") style:UIBarButtonItemStylePlain target:self action:@selector(cancelClickedSubBreed:)];
     [toolbarBreed setItems:[NSArray arrayWithObjects:cancelButtonBreed, flexibleSpace, doneButtonBreed, nil]];
     [toolbarSubBreed setItems:[NSArray arrayWithObjects:cancelButtonSubBreed, flexibleSpace, doneButtonSubBreed, nil]];
     
@@ -104,8 +110,10 @@
         });
     }];
     
-    
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self startSpin];
 }
 
 
@@ -168,7 +176,7 @@
 
 - (void)pressSearchButton {
     if ([self.breedTextField.text isEqual:@""]) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Так не найти пёселя" message:@"Нужно выбрать пёселя, чтобы найти его" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"dog not found", @"dog not found") message:NSLocalizedString(@"you need to choose", @"you need to choose") preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {}];
         [alertController addAction:action];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -184,11 +192,48 @@
 }
 
 - (void)viewWillLayoutSubviews {
-    self.dogPic.frame = CGRectMake(self.view.bounds.size.width / 2 - 165 / 2, self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height + 20, 165, 170);
-    
-    self.breedTextField.frame = CGRectMake(10, self.dogPic.frame.size.height + self.dogPic.frame.origin.y + 20, self.view.bounds.size.width / 2 - 15, 30);
-    
-    self.subBreedTextField.frame = CGRectMake(self.view.bounds.size.width /2 + 5, self.dogPic.frame.size.height + self.dogPic.frame.origin.y + 20, self.view.bounds.size.width / 2 - 15, 30);
+}
+
+- (void)spinImage:(UIImageView*)imageToMove withOptions:(UIViewAnimationOptions)options {
+    [UIView animateWithDuration:0.5
+                          delay:3
+                        options:options
+                     animations:^{
+                         imageToMove.transform = CGAffineTransformRotate(imageToMove.transform, (M_PI / 8) );
+                     }
+                     completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.5
+                                               delay:0
+                                             options:UIViewAnimationOptionCurveLinear
+                                          animations:^{
+                                              imageToMove.transform = CGAffineTransformRotate(imageToMove.transform, - (M_PI / 4) );
+                                          }
+                                          completion:^(BOOL finished) {
+                                              [UIView animateWithDuration:0.5
+                                                                    delay:0
+                                                                  options:UIViewAnimationOptionCurveEaseOut
+                                                               animations:^{
+                                                                   imageToMove.transform = CGAffineTransformRotate(imageToMove.transform, (M_PI / 8) );
+                                                               }
+                                                               completion:^(BOOL finished) {
+                                                                   
+                                                                   if (finished) {
+                                                                       [self spinImage:(UIImageView*)imageToMove withOptions: UIViewAnimationOptionCurveEaseIn];
+                                                                   }
+                                                               }];
+                                          }];
+                     }];
+}
+
+- (void)startSpin {
+    if (!animating) {
+        animating = YES;
+        [self spinImage:self.dogPic withOptions: UIViewAnimationOptionCurveEaseIn];
+    }
+}
+
+- (void)stopSpin {
+    animating = NO;
 }
 
 @end

@@ -1,0 +1,16 @@
+/* 
+  LocalizedStrings.strings
+  DevObjC-Lesson-3
+
+  Created by Евгений Иванов on 11/06/2019.
+  Copyright © 2019 Евгений Иванов. All rights reserved.
+*/
+
+"find dog" = "Fing a dog";
+"find dogs" = "Fing a dogs";
+"choose breed" = "Choose a breed";
+"choose subbreed" = "Choose a subbreed";
+"dog not found" = "So you will not find a dog";
+"you need to choose" = "You need to choose a dog to find him.";
+"done" = "Done";
+"cancel" = "Cancel";
